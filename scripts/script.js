@@ -85,7 +85,7 @@ function initGame(button, clickedLetter) {
 const gameOver = (isVictory) => {
   setTimeout(() => {
     gameModal.classList.remove("game-modal--hidden");
-    gameModalImg.src = `../images/${isVictory ? "victory" : "lost"}.gif`;
+    gameModalImg.src = `images/${isVictory ? "victory" : "lost"}.gif`;
     gameModalTitle.textContent = isVictory ? "Congrats!" : "Game Over!";
     gameModalMessage.innerHTML = `${
       isVictory ? "You found the word" : "The correct word was"
