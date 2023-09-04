@@ -19,7 +19,7 @@ function startGame() {
   hideModal();
   createKeyboard();
 
-  hangmanImage.src = "../images/hangman-0.svg";
+  hangmanImage.src = "images/hangman-0.svg";
   const { word, hint } = getRandom(wordlist);
   currentWord = word;
 
@@ -69,7 +69,7 @@ function initGame(button, clickedLetter) {
     });
   } else {
     wrongGuessCount++;
-    hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`;
+    hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
   }
   button.disabled = true;
   incorrectGuesses.textContent = `${wrongGuessCount} / ${maxGuesses}`;
