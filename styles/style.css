@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+
+:root {
+  --primary-color: hsl(220, 80%, 75%);
+  --primary-color-dark: hsl(220, 80%, 65%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  -webkit-user-drag: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  display: grid;
+  place-content: center;
+  padding: 20px;
+}
+
+.game-modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+}
+
+.game-modal.game-modal--hidden {
+  display: none;
+}
+
+.game-modal .game-modal__content {
+  background-color: white;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.game-modal .game-modal__image {
+  max-width: 125px;
+}
+
+.game-modal .game-modal__title {
+  margin: 20px;
+}
+
+.game-modal .game-modal__button {
+  margin-top: 20px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  padding: 60px 40px;
+  border-radius: 10px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+}
+
+.hangman-section .hangman-section__title {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hangman-section .hangman-section__image {
+  max-width: 250px;
+}
+
+.game-section .word-to-guess {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.game-section .word-to-guess .word-to-guess__letter {
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid black;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.game-section p {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.game-section .incorrect-guesses__content {
+  color: red;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.keyboard .key {
+  width: 40px;
+  height: 40px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.keyboard .key[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
